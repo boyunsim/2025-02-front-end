@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="/api/ddd" method="get">
+        <div>이름: <input type="text" name="nm" value="홍길동"></div>
+        <div>나이: <input type="text" name="age" value="18"></div>
+        <div>
+            <input type="submit" value="전송">
+            <button>전송3</button>
+            <input type="reset" value="리셋">
+        </div>
+    </form>
+    <hr>
+    <form action="/api/ddd" method="post">
+        <div>이름: <input type="text" name="nm" value="홍길동"></div>
+        <div>나이: <input type="text" name="age" value="18"></div>
+        <div>
+            <input type="submit" value="전송">
+            <button>전송3</button>
+            <input type="reset" value="리셋">
+        </div>
+    </form>
+    <hr>
+    <h2>input 종류</h2>
+    <form action="/dddd" method="get">
+        <div><input type="button" value="버튼명"></div>
+        <div>
+            <label>농구<input type="checkbox" name="sports" value="1" checked></label>
+            <label>배구<input type="checkbox" name="sports" value="2"></label>
+            <label>축구<input type="checkbox" name="sports" value="3"></label>
+        </div>
+        <div><input type="color" name="seat_color"></div>
+        <div><input type="date" name="start_date" value="2025-03-31">날짜</div>
+        <div><input type="datetime-local" id="id_start_datetime" name="start_datetime" value="2025-03-31 18:10">날짜</div>
+        <div><input type="email" name="email"></div>
+        <div><input type="file" name="all"></div>
+        <div><input type="file" name="pic" accept="images/*"></div>
+        <div><input type="hidden" name="hidden" value="12"></div>
+        <div><input type="image" src="https://i.pinimg.com/736x/67/3f/c3/673fc38a5e8814e2c71251bfe0bc4154.jpg"></div>
+        <div><input type="month" name="start_mon"></div>
+        <div><input type="number" name="age"></div>
+        <div><input type="password" name="psw"></div>
+        <div>
+            <div>학년</div>
+            <label>1학년 <input type="radio" name="grade" value="1" checked></label>
+            <label>2학년 <input type="radio" name="grade" value="2" ></label>
+            <label>3학년 <input type="radio" name="grade" value="3" ></label>
+            <label>4학년 <input type="radio" name="grade1" value="4"></label>
+        </div>
+        <div>
+            <select name="blood_type">
+                <option>A형</option>
+                <option>B형</option>
+                <option>AB형</option>
+                <option>O형</option>
+            </select>
+        </div>
+        <div>
+            <select name="blood_type2">
+                <option value="01">A형</option>
+                <option value="02">B형</option>
+                <option value="03">AB형</option>
+                <option value="04">O형</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="text" list="id_mbti"> <br>
+            <datalist id="id_mbti">
+                <option>INFJ</option>
+                <option>ENFJ</option>
+                <option>INTJ</option>
+                <option>ENTJ</option>
+            </datalist>
+        </div>
+        <div><input type="submit" value="전송"></div>
+    </form>
+
+    <script>
+        function must2digit(item) {
+            return String(item).padStart(2, '0');
+        }
+
+        window.addEventListener('load', () => {
+            console.log('load');
+
+            const $idStartDatetime = document.querySelector('#id_start_datetime');
+            if($idStartDatetime) {
+                const now = new Date();
+                const year = now.getFullYear();
+                const mon = now.getMonth() + 1;
+                const day = now.getDate();
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                $idStartDatetime.value = `${year}-${must2digit(mon)}-${must2digit(day)}T${must2digit(hour)}:${must2digit(minute)}`;
+            };
+        });
+    </script>
+</body>
+</html>
