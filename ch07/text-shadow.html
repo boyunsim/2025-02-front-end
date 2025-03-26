@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            1px 1px -> 우로 1px 아래로 1px
+            5px 5px 3px -> 앞 두개는 위와 동일 마지막은 번짐정도
+        */
+        .shadow1 { color: red; text-shadow: 1px 1px black;}
+        .shadow2 { text-shadow: 5px 5px 3px black;}
+        .shadow3 { color: white; text-shadow: 7px -3px 20px #000;}
+    </style>
+</head>
+<body>
+    <h2>text-shadow.html</h2>
+    <div class="shadow1">1.HTML</div>
+    <div class="shadow2">2.HTML</div>
+    <div class="shadow3">3.HTML</div>
+</body>
+</html>
